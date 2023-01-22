@@ -1,4 +1,4 @@
-﻿using GradeClassification;
+﻿using GradeIdentification;
 
 namespace ConsoleApp
 {
@@ -22,7 +22,7 @@ namespace ConsoleApp
         static void Print(decimal point)
         {
             Grade grade = new Grade();
-            Console.WriteLine($"number = {point}, grade = {grade.ClassifyGradeByPoint(point)}");
+            Console.WriteLine($"number = {point}, grade = {grade.IdentifyGradeByPoint(point)}");
         }
     }
 }

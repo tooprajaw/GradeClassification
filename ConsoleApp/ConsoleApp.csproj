@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GradeClassification.Application\GradeClassification.Application.csproj" />
+    <ProjectReference Include="..\GradeIdentification.Application\GradeIdentification.Application.csproj" />
   </ItemGroup>
 
 </Project>

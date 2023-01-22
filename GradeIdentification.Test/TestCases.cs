@@ -1,5 +1,4 @@
-﻿using GradeClassification;
-using Xunit.Abstractions;
+﻿using Xunit.Abstractions;
 
 namespace GradeIdentification
 {
@@ -21,35 +20,35 @@ namespace GradeIdentification
         [MemberData(nameof(TestData.ShouldBeF), MemberType = typeof(TestData))]
         public void PointLessThanSixty_ShouldBeF(decimal point)
         {
-            string result = _grade.ClassifyGradeByPoint(point);
+            string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("F");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeD), MemberType = typeof(TestData))]
         public void PointLessThanSeventy_ShouldBeD(decimal point)
         {
-            string result = _grade.ClassifyGradeByPoint(point);
+            string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("D");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeC), MemberType = typeof(TestData))]
         public void PointLessThanEighty_ShouldBeC(decimal point)
         {
-            string result = _grade.ClassifyGradeByPoint(point);
+            string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("C");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeB), MemberType = typeof(TestData))]
         public void PointLessThanNinety_ShouldBeB(decimal point)
         {
-            string result = _grade.ClassifyGradeByPoint(point);
+            string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("B");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeA), MemberType = typeof(TestData))]
         public void PointMoreThanOrEqualNinety_ShouldBeA(decimal point)
         {
-            string result = _grade.ClassifyGradeByPoint(point);
+            string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("A");
         }
     }
