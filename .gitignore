@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/GradeIdentification.Test/obj
+/GradeIdentification.Test/bin
+/GradeIdentification.Application/obj
+/GradeIdentification.Application/bin
+/ConsoleApp/obj
+/ConsoleApp/bin
