@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+[assembly: InternalsVisibleTo("GradeIdentification.Test")]
 namespace GradeIdentification
 {
     public class Grade
@@ -30,7 +32,7 @@ namespace GradeIdentification
             return "A";
         }
 
-        public void ValidatePointInRange(decimal point)
+        internal void ValidatePointInRange(decimal point)
         {
             if (point < 0 || point > 100)
             {
