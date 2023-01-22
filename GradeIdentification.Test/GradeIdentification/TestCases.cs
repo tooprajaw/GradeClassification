@@ -11,42 +11,42 @@ namespace GradeIdentification
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldThrowException), MemberType = typeof(TestData))]
-        public void PointOutOfScope_ShouldThrowException(decimal point)
+        public void PointOutOfScope_ShouldThrowException(double point)
         {
             Action act = () => _grade.ValidatePointInRange(point);
             act.Should().Throw<ArgumentOutOfRangeException>();
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeF), MemberType = typeof(TestData))]
-        public void PointLessThanSixty_ShouldBeF(decimal point)
+        public void PointLessThanSixty_ShouldBeF(double point)
         {
             string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("F");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeD), MemberType = typeof(TestData))]
-        public void PointLessThanSeventy_ShouldBeD(decimal point)
+        public void PointLessThanSeventy_ShouldBeD(double point)
         {
             string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("D");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeC), MemberType = typeof(TestData))]
-        public void PointLessThanEighty_ShouldBeC(decimal point)
+        public void PointLessThanEighty_ShouldBeC(double point)
         {
             string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("C");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeB), MemberType = typeof(TestData))]
-        public void PointLessThanNinety_ShouldBeB(decimal point)
+        public void PointLessThanNinety_ShouldBeB(double point)
         {
             string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("B");
         }
         [Theory]
         [MemberData(nameof(TestData.ShouldBeA), MemberType = typeof(TestData))]
-        public void PointMoreThanOrEqualNinety_ShouldBeA(decimal point)
+        public void PointMoreThanOrEqualNinety_ShouldBeA(double point)
         {
             string result = _grade.IdentifyGradeByPoint(point);
             result.Should().Be("A");

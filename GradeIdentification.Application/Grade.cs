@@ -10,7 +10,7 @@ namespace GradeIdentification
 {
     public class Grade
     {
-        public string IdentifyGradeByPoint(decimal point)
+        public string IdentifyGradeByPoint(double point)
         {
             ValidatePointInRange(point);
             if (point >= 0 && point < 60)
@@ -32,7 +32,7 @@ namespace GradeIdentification
             return "A";
         }
 
-        internal void ValidatePointInRange(decimal point)
+        internal void ValidatePointInRange(double point)
         {
             if (point < 0 || point > 100)
             {

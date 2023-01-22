@@ -12,14 +12,14 @@ namespace GradeIdentification
         {
             get
             {
-                decimal point;
-                point = 100.00001m;
+                double point;
+                point = 100.00001d;
                 yield return new object[] { point };
-                point = 101m;
+                point = 101;
                 yield return new object[] { point };
-                point = -0.000001m;
+                point = -0.000001d;
                 yield return new object[] { point };
-                point = -1m;
+                point = -1;
                 yield return new object[] { point };
             }
         }
@@ -27,16 +27,16 @@ namespace GradeIdentification
         {
             get
             {
-                decimal point;
-                point = 0m;
+                double point;
+                point = 0;
                 yield return new object[] { point };
-                point = 0.00001m;
+                point = 0.00001d;
                 yield return new object[] { point };
-                point = 59.99999999m;
+                point = 59.99999999d;
                 yield return new object[] { point };
-                point = 59m;
+                point = 59;
                 yield return new object[] { point };
-                point = 30m;
+                point = 30;
                 yield return new object[] { point };
             }
         }
@@ -44,16 +44,16 @@ namespace GradeIdentification
         {
             get
             {
-                decimal point;
-                point = 60m;
+                double point;
+                point = 60;
                 yield return new object[] { point };
-                point = 60.00001m;
+                point = 60.00001d;
                 yield return new object[] { point };
-                point = 69.99999999m;
+                point = 69.99999999d;
                 yield return new object[] { point };
-                point = 69m;
+                point = 69;
                 yield return new object[] { point };
-                point = 65m;
+                point = 65;
                 yield return new object[] { point };
             }
         }
@@ -61,16 +61,16 @@ namespace GradeIdentification
         {
             get
             {
-                decimal point;
-                point = 70m;
+                double point;
+                point = 70;
                 yield return new object[] { point };
-                point = 70.00001m;
+                point = 70.00001d;
                 yield return new object[] { point };
-                point = 79.99999999m;
+                point = 79.99999999d;
                 yield return new object[] { point };
-                point = 79m;
+                point = 79;
                 yield return new object[] { point };
-                point = 75m;
+                point = 75;
                 yield return new object[] { point };
             }
         }
@@ -78,16 +78,16 @@ namespace GradeIdentification
         {
             get
             {
-                decimal point;
-                point = 80m;
+                double point;
+                point = 80;
                 yield return new object[] { point };
-                point = 80.00001m;
+                point = 80.00001d;
                 yield return new object[] { point };
-                point = 89.99999999m;
+                point = 89.99999999d;
                 yield return new object[] { point };
-                point = 89m;
+                point = 89;
                 yield return new object[] { point };
-                point = 85m;
+                point = 85;
                 yield return new object[] { point };
             }
         }
@@ -95,18 +95,18 @@ namespace GradeIdentification
         {
             get
             {
-                decimal point;
-                point = 90m;
+                double point;
+                point = 90;
                 yield return new object[] { point };
-                point = 90.00001m;
+                point = 90.00001d;
                 yield return new object[] { point };
-                point = 99.99999999m;
+                point = 99.99999999d;
                 yield return new object[] { point };
-                point = 99m;
+                point = 99;
                 yield return new object[] { point };
-                point = 95m;
+                point = 95;
                 yield return new object[] { point };
-                point = 100m;
+                point = 100;
                 yield return new object[] { point };
             }
         }

@@ -6,20 +6,20 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Print(50.0m);
-            Print(60.0m);
-            Print(70.0m);
-            Print(80.0m);
-            Print(90.0m);
-            Print(100.0m);
-            Print(59.9999999m);
-            Print(69.9999999m);
-            Print(79.9999999m);
-            Print(89.9999999m);
+            Print(50.0);
+            Print(60.0);
+            Print(70.0);
+            Print(80.0);
+            Print(90.0);
+            Print(100.0);
+            Print(59.9999999d);
+            Print(69.9999999d);
+            Print(79.9999999d);
+            Print(89.9999999d);
             Console.ReadLine();
         }
 
-        static void Print(decimal point)
+        static void Print(double point)
         {
             Grade grade = new Grade();
             Console.WriteLine($"number = {point}, grade = {grade.IdentifyGradeByPoint(point)}");
