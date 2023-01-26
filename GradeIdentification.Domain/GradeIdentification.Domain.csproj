@@ -7,12 +7,4 @@
     <RootNamespace>GradeIdentification</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\GradeIdentification.Domain\GradeIdentification.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="GradeRules\Interfaces\" />
-  </ItemGroup>
-
 </Project>
