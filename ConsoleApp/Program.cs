@@ -8,18 +8,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            //Print(50.0);
-            //Print(60.0);
-            //Print(70.0);
-            //Print(80.0);
-            //Print(90.0);
-            //Print(100.0);
-            //Print(59.9999999d);
-            //Print(69.9999999d);
-            //Print(79.9999999d);
-            //Print(89.9999999d);
-
-            GradeScope rules = new GradeScope
+            GradeScope scope = new GradeScope
             {
                 MinPoint = 0,
                 MaxPoint = 100,
@@ -51,6 +40,7 @@ namespace ConsoleApp
                     },
                 }
             };
+
             /*
             Print2(0, rules.IdentifyGradeByPoint(0));
             Print2(100, rules.IdentifyGradeByPoint(100));
@@ -62,43 +52,17 @@ namespace ConsoleApp
             Print2(59.99999d, rules.IdentifyGradeByPoint(59.99999d));
             Print2(69.99999d, rules.IdentifyGradeByPoint(69.99999d));
             Print2(79.99999d, rules.IdentifyGradeByPoint(79.99999d));
-
-            rules.SetPointRangeAndScope(new List<GradeRange> {
-                new GradeRange
-                {
-                    MinPoint = 0,
-                    MaxPoint = 60,
-                    Result = "F"
-                },
-                new GradeRange
-                {
-                    MinPoint = 60,
-                    MaxPoint = 70,
-                    Result = "D"
-                },
-                new GradeRange
-                {
-                    MinPoint = 70,
-                    MaxPoint = 80,
-                    Result = "C"
-                },
-                new GradeRange
-                {
-                    MinPoint = 70,
-                    MaxPoint = 80,
-                    Result = "B"
-                },
-                new GradeRange
-                {
-                    MinPoint = 80,
-                    MaxPoint = 100,
-                    Result = "A"
-                },
-            }, 0, 100);
             */
+            GradeCalculation calculation = new GradeCalculation();
+            Print(calculation, scope, 100);
+            Print(calculation, scope, 49.99999d);
+            Print(calculation, scope, 59.99999d);
+            Print(calculation, scope, 69.99999d);
+            Print(calculation, scope, 79.99999d);
             Console.ReadLine();
         }
 
+        /*
         static void Print(double point)
         {
             Grade grade = new Grade();
@@ -109,6 +73,12 @@ namespace ConsoleApp
         {
             Grade grade = new Grade();
             Console.WriteLine($"number = {point}, grade = {result}");
+        }
+        */
+
+        static void Print(GradeCalculation calculation, GradeScope scope, double point)
+        {
+            Console.WriteLine($"Point = {point}, grade = {calculation.IdentifyGradeByPoint(scope, point)}");
         }
     }
 }
