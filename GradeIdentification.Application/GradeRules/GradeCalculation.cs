@@ -1,4 +1,7 @@
 ﻿using GradeIdentification.Calculation;
+using System;
+using System.Linq;
+
 namespace GradeIdentification.GradeRules
 {
     public class GradeCalculation

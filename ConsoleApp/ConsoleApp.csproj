@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GradeIdentification.Application\GradeIdentification.Application.csproj" />
+    <ProjectReference Include="..\GradeIdentification.Domain\GradeIdentification.Domain.csproj" />
   </ItemGroup>
 
 </Project>
