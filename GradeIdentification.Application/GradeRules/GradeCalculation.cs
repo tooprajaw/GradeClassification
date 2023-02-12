@@ -34,7 +34,6 @@ namespace GradeIdentification.GradeRules
 
         public List<StudentWithGrade> IdentifyGradeForStudentList(List<StudentWithPoint> studentList, GradeScope scope)
         {
-            ValidateScope(scope);
             if (!studentList?.Any() ?? false)
             {
                 throw new ArgumentNullException(nameof(studentList));
