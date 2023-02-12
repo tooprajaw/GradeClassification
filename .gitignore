@@ -3,11 +3,15 @@
 ################################################################################
 
 /.vs
+/GradeIdentification.Core/obj
+/GradeIdentification.Core/bin
 /GradeIdentification.Domain/obj
 /GradeIdentification.Domain/bin
 /GradeIdentification.Application/obj
 /GradeIdentification.Application/bin
-/GradeIdentification.Test/obj
 /GradeIdentification.Test/bin
+/GradeIdentification.Test/obj
+/GradeIdentification.Web/bin
+/GradeIdentification.Web/obj
 /ConsoleApp/obj
 /ConsoleApp/bin

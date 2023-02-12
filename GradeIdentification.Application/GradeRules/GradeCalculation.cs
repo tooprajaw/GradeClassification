@@ -1,5 +1,8 @@
 ﻿using GradeIdentification.Calculation;
+using GradeIdentification.DTO.Input.Grade;
+using GradeIdentification.DTO.Output.Grade;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GradeIdentification.GradeRules
@@ -29,6 +32,20 @@ namespace GradeIdentification.GradeRules
             return result?.Result ?? throw new Exception("Cannot identify grade.");
         }
 
+        public List<StudentWithGrade> IdentifyGradeForStudentList(List<StudentWithPoint> studentList, GradeScope scope)
+        {
+            ValidateScope(scope);
+            if (!studentList?.Any() ?? false)
+            {
+                throw new ArgumentNullException(nameof(studentList));
+            }
+            return studentList.Select(e => new StudentWithGrade
+            {
+                StudentId = e.StudentId,
+                Result = IdentifyGradeByPoint(scope, e.Point)
+            }).ToList();
+        }
+
         internal void ValidateScope(GradeScope scope)
         {
             if (scope == null)
@@ -45,7 +62,7 @@ namespace GradeIdentification.GradeRules
             //}
             if (!scope.GradeRuleList?.Any() ?? false)
             {
-                throw new Exception("Please specify");
+                throw new Exception("Please specify grade rule");
             }
             if (scope.GradeRuleList.Any(e => e.MinPoint < scope.MinPoint || e.MinPoint > scope.MaxPoint))
             {

@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GradeIdentification.Core\GradeIdentification.Core.csproj" />
     <ProjectReference Include="..\GradeIdentification.Domain\GradeIdentification.Domain.csproj" />
   </ItemGroup>
 

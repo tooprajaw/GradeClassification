@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Grade Identification</h1>
+    <input type="hidden" id="hddCurrentCount" value="0" />
+    <div class="container">
+        <div class="row" id="pnlStudentCount">
+            <div class="col">
+                <label>Student count : </label>
+                <input type="number" id="txtStudentCount" min="1" max="20" />
+                <button id="btnStudentCount">Generate Form</button>
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row" id="pnlStudentGrade">
+            @*<div class="row" id="pnlStudent_1">
+                <div class="col">
+                    <label>Student name : </label>
+                    <input type="text" id="txtStudentName" />
+                </div>
+                <div class="col">
+                    <label>Point : </label>
+                    <input type="text" id="txtPoint" />
+                </div>
+                <div class="col">
+                    <label>Result : </label>
+                    <label id="lblResult"></label>
+                </div>
+            </div>
+            <div class="row" id="pnlStudentGrade_2">
+                <div class="col">
+                    <label>Student name : </label>
+                    <input type="text" id="txtStudentName" />
+                </div>
+                <div class="col">
+                    <label>Point : </label>
+                    <input type="text" id="txtPoint" />
+                </div>
+                <div class="col">
+                    <label>Result : </label>
+                    <label id="lblResult"></label>
+                </div>
+            </div>*@
+        </div>
+        <button id="btnSubmitPoint">Submit Point</button>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        //var oldCount =
+        $('#btnStudentCount').click(function () {
+            var newCount = $('#txtStudentCount').val();
+            console.log(newCount);
+
+            var oldCount = $('#hddCurrentCount').val();
+
+            if (newCount > oldCount) {
+                var diff = newCount - oldCount;
+                for (var v = oldCount, i = 0; i < diff; i++){
+                    v++;
+                    appendForm(v);
+                }
+            }
+            else if (newCount < oldCount){
+                var diff = oldCount - newCount;
+                for (var v = oldCount, i = 0; i < diff; i++) {
+                    //console.log('remove at : ' + v);
+
+                    $('#pnlStudent_' + v).remove();
+                    v--;
+                }
+            }
+
+            $('#hddCurrentCount').val(newCount);
+        });
+
+        function appendForm(v){
+            $("#pnlStudentGrade").append(genForm(v));
+        }
+
+        function genForm(v){
+            var html = '<div class="row" id="pnlStudent_' + v + '">'
+                +'<div class="col">'
+                    +'<label>Student name : </label>'
+                    +'<input type="text" id="txtStudentName_' + v + '" />'
+                +'</div>'
+                +'<div class="col">'
+                    +'<label>Point : </label>'
+                    +'<input type="text" id="txtPoint_' + v + '" />'
+                +'</div>'
+                +'<div class="col">'
+                    +'<label>Result : </label>'
+                    +'<label id="lblResult_' + v + '"></label>'
+                +'</div>'
+            +'</div>'
+            return html;
+        }
+
+        $('#btnSubmitPoint').click(function () {
+            var currentCount = $('#hddCurrentCount').val();
+            var data = [];
+            for (var i = 1; i <= currentCount; i++){
+                var point = $('#txtPoint_' + i).val();
+                if (isNaN(point) || point < 0 || point > 100){
+                    return;
+                }
+                data.push({
+                    studentId: i,
+                    point: point
+                });
+            }
+            //console.log(JSON.stringify(data));
+            $.ajax({
+                url: 'api/grade/Calculate',
+                type: 'POST',
+                //headers: {
+                //    'Authorization': "Bearer " + token,
+                //    'TimeZoneName': moment.tz.guess()
+                //},
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify(data),
+                success: function(result){
+                    console.log('result : ' + JSON.stringify(result));
+                    for (var i = 1; i <= result.length; i++){
+                        $('#lblResult_' + i).text(result[i - 1].result);
+                    }
+                }
+                //error: failFunc,
+                //complete: Global_completeFunc
+            });
+        });
+    </script>
+}
