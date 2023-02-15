@@ -1,6 +1,6 @@
 ﻿using GradeIdentification;
 using GradeIdentification.Calculation;
-using GradeIdentification.GradeRules;
+using GradeIdentification.Grading;
 
 namespace ConsoleApp
 {

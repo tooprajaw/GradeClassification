@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GradeIdentification.GradeRules
+namespace GradeIdentification.Grading
 {
     public class GradeCalculation
     {

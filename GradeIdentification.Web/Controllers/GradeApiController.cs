@@ -1,6 +1,6 @@
 ﻿using GradeIdentification.Calculation;
 using GradeIdentification.DTO.Input.Grade;
-using GradeIdentification.GradeRules;
+using GradeIdentification.Grading;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
